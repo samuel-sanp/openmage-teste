@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Inchoo_Adminblock>
+            <version>0.1.0</version>
+        </Inchoo_Adminblock>
+    </modules>
+    <global>
+        <blocks>
+            <inchoo_adminblock>
+                <class>Inchoo_Adminblock_Block</class>
+            </inchoo_adminblock>
+        </blocks>
+        <helpers>
+            <inchoo_adminblock>
+                <class>Inchoo_Adminblock_Helper</class>
+            </inchoo_adminblock>
+        </helpers>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <inchoo_adminblock before="Mage_Adminhtml">
+                            Inchoo_Adminblock_Adminhtml
+                        </inchoo_adminblock>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <inchoo_adminblock>
+                    <file>adminblock.xml</file>
+                </inchoo_adminblock>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

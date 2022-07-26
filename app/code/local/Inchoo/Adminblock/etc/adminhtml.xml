@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<config>
+    <menu>
+        <inchoo module="inchoo_adminblock">
+            <title>Personal Page</title>
+            <children>
+                <item module="inchoo_adminblock">
+                    <title>Admin Block</title>
+                    <action>adminhtml/create/index</action>
+                </item>
+            </children>
+        </inchoo>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>All everything</title>
+            </all>
+            <admin>
+                <children>
+                    <inchoo module="inchoo_adminblock">
+                        <!-- <title>Personal Page</title> -->
+                        <children>
+                            <item module="inchoo_adminblock">
+                                <title>Admin Block</title>
+                            </item>
+                        </children>
+                    </inchoo>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
