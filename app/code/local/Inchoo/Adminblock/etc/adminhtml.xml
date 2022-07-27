@@ -6,7 +6,7 @@
             <children>
                 <item module="inchoo_adminblock">
                     <title>Admin Block</title>
-                    <action>adminhtml/create/index</action>
+                    <action>adminhtml/create</action>
                 </item>
             </children>
         </inchoo>

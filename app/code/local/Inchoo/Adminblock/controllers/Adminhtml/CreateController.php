@@ -4,14 +4,16 @@ class Inchoo_Adminblock_Adminhtml_CreateController extends Mage_Adminhtml_Contro
 {
     public function indexAction()
     {
-    die("DIE TEST");
-        $this->loadLayout()
-            ->_addContent(
-            $this->getLayout()
-            ->createBlock('inchoo_adminblock/adminhtml_adminblock')
-            ->setTemplate('inchoo/adminblock.phtml')
-            );
-            return $this->renderLayout();
+        // $this->loadLayout()
+        //     ->_addContent(
+        //     $this->getLayout()
+        //     ->createBlock('inchoo_adminblock/adminhtml_adminblock')
+        //     ->setTemplate('inchoo/adminblock.phtml')
+        //     );
+        //     return $this->renderLayout();
+
+        $this->loadLayout();
+        return $this->renderLayout();
     }
 
     protected function _isAllowed() {

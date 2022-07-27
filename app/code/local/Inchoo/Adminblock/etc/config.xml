@@ -22,9 +22,7 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <inchoo_adminblock before="Mage_Adminhtml">
-                            Inchoo_Adminblock_Adminhtml
-                        </inchoo_adminblock>
+                        <Inchoo_Adminblock after="Mage_Adminhtml">Inchoo_Adminblock_Adminhtml</Inchoo_Adminblock>
                     </modules>
                 </args>
             </adminhtml>
@@ -33,9 +31,9 @@
     <adminhtml>
         <layout>
             <updates>
-                <inchoo_adminblock>
+                <adminblock>
                     <file>adminblock.xml</file>
-                </inchoo_adminblock>
+                </adminblock>
             </updates>
         </layout>
     </adminhtml>
