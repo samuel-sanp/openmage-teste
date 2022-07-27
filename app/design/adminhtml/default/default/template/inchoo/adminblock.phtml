@@ -1,6 +1,1 @@
-<?php
-var_dump(get_class($this));
-var_dump($this->getName());
-var_dump($this->getChildHtml('content'));
-?>
-<h1>Good Job! We are done! :)</h1>
+<h1>Good Job, <?php echo implode(',', $this->getName()) ?>! We are done! :)</h1>

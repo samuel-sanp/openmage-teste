@@ -13,7 +13,12 @@ class Inchoo_Adminblock_Adminhtml_CreateController extends Mage_Adminhtml_Contro
         //     return $this->renderLayout();
 
         $this->loadLayout();
+        $block = $this->getLayout()->createBlock('inchoo_adminblock/adminhtml_adminblock');
+        $this->getLayout()->getBlock('content')->append($block);
         return $this->renderLayout();
+
+        // $this->loadLayout();
+        // return $this->renderLayout();
     }
 
     protected function _isAllowed() {
