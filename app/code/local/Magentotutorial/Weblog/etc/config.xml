@@ -29,14 +29,14 @@
                     </blogpost>
                 </entities>
             </weblog_resource>
-            <resources>
-                <weblog_setup>
-                    <setup>
-                        <module>Magentotutorial_Weblog</module>
-                        <class>Magentotutorial_Weblog_Model_Resource_Setup</class>
-                    </setup>
-                </weblog_setup>
-            </resources>
         </models>
+        <resources>
+            <weblog_setup>
+                <setup>
+                    <module>Magentotutorial_Weblog</module>
+                    <class>Magentotutorial_Weblog_Model_Resource_Setup</class>
+                </setup>
+            </weblog_setup>
+        </resources>
     </global>
 </config>
