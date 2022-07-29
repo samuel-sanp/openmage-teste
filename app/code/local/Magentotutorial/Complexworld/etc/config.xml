@@ -15,4 +15,30 @@
             </complexworld>
         </routers>
     </frontend>
+    <global>
+        <models>
+            <complexworld>
+                <class>Magentotutorial_Complexworld_Model</class>
+                <resourceModel>complexworld_resource</resourceModel>
+            </complexworld>
+            <complexworld_resource>
+                <class>Magentotutorial_Complexworld_Model_Resource</class>
+                <entities>
+                    <!-- model name -->
+                    <eavblogpost>
+                        <table>eavblog_posts</table>
+                    </eavblogpost>
+                </entities>
+            </complexworld_resource>
+        </models>
+        <resources>
+            <!-- add entity type in database -->
+            <complexworld_setup>
+                <setup>
+                    <module>Magentotutorial_Complexworld</module>
+                    <class>Magentotutorial_Complexworld_Model_Resource_Setup</class>
+                </setup>
+            </complexworld_setup>
+        </resources>
+    </global>
 </config>
