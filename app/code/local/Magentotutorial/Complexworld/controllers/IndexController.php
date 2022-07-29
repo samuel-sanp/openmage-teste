@@ -28,12 +28,12 @@ class Magentotutorial_Complexworld_IndexController extends Mage_Core_Controller_
             ->addAttributeToSelect('content');
         $entries->load();
 
-        foreach($entries as $entry)
-        {
-            echo '<h2>' . $entry->getTitle() . '</h2>';
-            echo '<p>Date: ' . $entry->getDate() . '</p>';
-            echo '<p>' . $entry->getContent() . '</p>';
-        }
+            foreach($entries as $entry)
+            {
+                echo '<h2>' . $entry->getTitle() . '</h2>';
+                echo '<p>Date: ' . $entry->getDate() . '</p>';
+                echo '<p>' . $entry->getContent() . '</p>';
+            }
 
         echo '</br>Done</br>';
     }

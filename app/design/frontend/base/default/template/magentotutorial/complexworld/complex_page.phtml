@@ -1,5 +1,10 @@
 <?php
-    $this
+$weblog2 = Mage::getModel('complexworld/eavblogpost');
+$entries = $weblog2->getCollection()
+    ->addAttributeToSelect('title')
+    ->addAttributeToSelect('date')
+    ->addAttributeToSelect('content');
+$entries->load();
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -9,11 +14,16 @@
     <title>Olá Mundo Complexo</title>
     <style type="text/css">
         body {
-            background-color:#808080;
+            background-color:#DCDCDC;
         }
     </style>
 </head>
 <body>
-    <h1>O mundo complexo do OpenMage</h1>
+    <h1>O complexo mundo do OpenMage</h1>
+    <?php foreach ($entries as $entry) { ?>
+        <h2><?php echo $entry->getTitle() ?></h2>
+        <p>Date: <?php echo $entry->getDate() ?></p>
+        <p><?php echo $entry->getContent() ?></p>
+    <?php } ?>
 </body>
 </html>
