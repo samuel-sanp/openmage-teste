@@ -1,9 +1,6 @@
 <?php
 class Magentotutorial_Complexworld_IndexController extends Mage_Core_Controller_Front_Action {
     public function indexAction() {
-        $weblog2 = Mage::getModel('complexworld/eavblogpost');
-        $weblog2->load(1);
-        
         $this->loadLayout();
         $this->renderLayout();
     }
@@ -36,5 +33,47 @@ class Magentotutorial_Complexworld_IndexController extends Mage_Core_Controller_
             }
 
         echo '</br>Done</br>';
+    }
+
+    public function testAction()
+    {
+        $collection_of_posts = Mage::getModel('complexworld/eavblogpost')
+            ->getCollection()
+            ->addAttributeToSelect('title');
+
+        // $collection_of_posts->addAttributeToSelect('*');
+
+        // $collection_of_posts->addFieldToFilter(
+        //     'entity_id',
+        //     array('eq' => '2')
+        // );
+
+        // $collection_of_posts->addFieldToFilter(
+        //     'entity_id',
+        //     array('lt' => '3')
+        // );
+
+        // $collection_of_posts->addFieldToFilter(
+        //     'title',
+        //     array('like' => 'Test%')
+        // );
+
+        $collection_of_posts->addFieldToFilter(
+            'entity_id',
+            array('in' => array('3', '6'))
+        );
+
+        $filtered_posts = $collection_of_posts->getItems();
+
+        foreach ($filtered_posts as $post) {
+            echo
+            '<pre>',
+                var_dump($post->getData()),
+            '</pre>';
+        }
+
+        echo '<pre>',
+        var_dump((string) $collection_of_posts->getSelect()),
+        '</pre>';
     }
 }
