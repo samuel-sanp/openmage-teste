@@ -5,6 +5,13 @@
             <version>0.1.0</version>
         </My_Module>
     </modules>
+    <global>
+        <models>
+            <module>
+                <class>My_Module_Model</class>
+            </module>
+        </models>
+    </global>
     <crontab>
         <jobs>
             <mymodule_helloworld>

@@ -41,4 +41,24 @@
             </complexworld_setup>
         </resources>
     </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Magentotutorial_Complexworld before="Mage_Adminhtml">Magentotutorial_Complexworld_Adminhtml</Magentotutorial_Complexworld>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <magentotutorial_complexworld>
+                    <file>complexworld.xml</file>
+                </magentotutorial_complexworld>
+            </updates>
+        </layout>
+    </adminhtml>
 </config>

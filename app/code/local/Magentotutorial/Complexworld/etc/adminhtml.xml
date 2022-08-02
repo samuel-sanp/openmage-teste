@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <magentotutorial_complexworld translate="title">
+            <title>Blog</title>
+            <children>
+                <magentotutorial_complexworld translate="title">
+                    <title>Posts</title>
+                    <!-- controller -->
+                    <action>adminhtml/index/index</action>
+                </magentotutorial_complexworld>
+            </children>
+        </magentotutorial_complexworld>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <magentotutorial_complexworld translate="title" module="magentotutorial_complexworld">
+                        <title>Blog</title>
+                        <children>
+                            <magentotutorial_complexworld translate="title">
+                                <title>Posts</title>
+                            </magentotutorial_complexworld>
+                        </children>
+                    </magentotutorial_complexworld>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
