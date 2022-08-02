@@ -16,6 +16,11 @@
         </routers>
     </frontend>
     <global>
+        <blocks>
+            <magentotutorial_complexworld>
+                <class>Magentotutorial_Complexworld_Block</class>
+            </magentotutorial_complexworld>
+        </blocks>
         <models>
             <complexworld>
                 <class>Magentotutorial_Complexworld_Model</class>
