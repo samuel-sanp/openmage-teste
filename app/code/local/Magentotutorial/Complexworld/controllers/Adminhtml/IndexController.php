@@ -8,6 +8,11 @@ class Magentotutorial_Complexworld_Adminhtml_IndexController extends Mage_Adminh
         return $this->renderLayout();
     }
 
+    public function newAction()
+    {
+        $this->_forward('edit');
+    }
+
     protected function _isAllowed() {
         return true;
     }

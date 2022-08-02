@@ -2,6 +2,14 @@
 
 class Magentotutorial_Complexworld_Block_Adminhtml_Complexworld extends Mage_Adminhtml_Block_Widget_Container
 {
+    // public function __construct()
+    // {
+    //     $this->_blockGroup = 'magentotutorial_complexworld';
+    //     $this->_controller = 'adminhtml_index';
+    //     $this->_headerText = $this->__('Posts');
+    //     parent::__construct();
+    // }
+
     public function getPosts()
     {
         $weblog = Mage::getModel('complexworld/eavblogpost');
@@ -19,7 +27,7 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Complexworld extends Mage_Adm
         // $this->removeButton('add');
         $this->_addButton('add_new', array(
             'label' => $this->__('Add'),
-            'onclick' => "setLocation('{$this->getUrl('*/*/testAction')}')",
+            'onclick' => "setLocation('{$this->getUrl('*/*/new')}')",
         ));
         $this->_addButton('edit', array(
             'label' => $this->__('Edit'),
