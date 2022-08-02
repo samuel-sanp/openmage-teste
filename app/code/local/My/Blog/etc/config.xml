@@ -1,0 +1,58 @@
+<config>
+    <modules>
+        <My_Blog>
+            <version>0.1.0</version>
+        </My_Blog>
+    </modules>
+    <global>
+        <blocks>
+            <my_blog>
+                <class>My_Blog_Block</class>
+            </my_blog>
+        </blocks>
+        <models>
+            <blog>
+                <class>My_Blog_Model</class>
+                <resourceModel>blog_resource</resourceModel>
+            </blog>
+            <blog_resource>
+                <class>My_Blog_Model_Resource</class>
+                <entities>
+                    <!-- model name -->
+                    <eavmyblogpost>
+                        <table>eavmyblog_posts</table>
+                    </eavmyblogpost>
+                </entities>
+            </blog_resource>
+        </models>
+        <resources>
+            <!-- add entity type in database -->
+            <blog_setup>
+                <setup>
+                    <module>My_Blog</module>
+                    <class>My_Blog_Model_Resource_Setup</class>
+                </setup>
+            </blog_setup>
+        </resources>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <My_Blog before="Mage_Adminhtml">My_Blog_Adminhtml</My_Blog>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <My_Blog>
+                    <file>blog.xml</file>
+                </My_Blog>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>
