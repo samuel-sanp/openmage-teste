@@ -1,1 +1,28 @@
-<h1>TESTE</h1>
+<?php
+
+$posts = $this->getPosts();
+
+?>  
+
+<header>
+    <h1>Posts</h1>
+</header>
+<body>
+    <main>
+        <table cellspacing="25">
+            <td class="form-buttons"><?php echo $this->getButtonsHtml() ?></td>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Date</th>
+            </tr>
+            <?php foreach ($posts as $post) { ?>
+                <tr>
+                    <td><?php echo $post->getTitle() ?></td>
+                    <td><?php echo $post->getContent() ?></td>
+                    <td><?php echo $post->getDate() ?></td>
+                </tr>
+            <?php } ?>
+        </table>
+    </main>
+</body>
