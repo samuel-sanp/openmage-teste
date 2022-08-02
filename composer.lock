@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "629af822bffc4b3c629573943dfa5222",
+    "content-hash": "1e114d7716d7396e9d1d62a09dce33b4",
     "packages": [
+        {
+            "name": "aoepeople/aoe_scheduler",
+            "version": "v1.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AOEpeople/Aoe_Scheduler.git",
+                "reference": "3ae7c3466ef19fcb1f3f777f97f88cf3c55f0e9c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AOEpeople/Aoe_Scheduler/zipball/3ae7c3466ef19fcb1f3f777f97f88cf3c55f0e9c",
+                "reference": "3ae7c3466ef19fcb1f3f777f97f88cf3c55f0e9c",
+                "shasum": ""
+            },
+            "require": {
+                "magento-hackathon/magento-composer-installer": "*",
+                "php": ">=5.3"
+            },
+            "replace": {
+                "fbrnc/aoe_scheduler": "*"
+            },
+            "type": "magento-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Fabrizio Branca",
+                    "email": "firstname.lastname@aoe.com",
+                    "role": "Author/Maintainer"
+                },
+                {
+                    "name": "Lee Saferite",
+                    "email": "lee.saferite@aoe.com",
+                    "role": "Contributor/Maintainer"
+                }
+            ],
+            "description": "Magento Cron Scheduler",
+            "homepage": "https://github.com/AOEpeople/Aoe_Scheduler",
+            "support": {
+                "issues": "https://github.com/AOEpeople/Aoe_Scheduler/issues",
+                "source": "https://github.com/AOEpeople/Aoe_Scheduler/tree/v1.5.2"
+            },
+            "time": "2020-03-19T16:24:32+00:00"
+        },
         {
             "name": "eloquent/enumeration",
             "version": "5.1.1",

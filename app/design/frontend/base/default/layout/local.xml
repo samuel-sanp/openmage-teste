@@ -13,6 +13,7 @@
             <action method="setTemplate">
                 <template>magentotutorial/complexworld/complex_page.phtml</template>
             </action>
+            <!-- <block type="magentotutorial_complexworld/complexworld" name="magentotutorial_complexworld.complexworld" template="magentotutorial/complexworld/complex_page.phtml"/> -->
         </reference>
     </complexworld_index_index>
 </layout>

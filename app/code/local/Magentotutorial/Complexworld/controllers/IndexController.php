@@ -48,20 +48,20 @@ class Magentotutorial_Complexworld_IndexController extends Mage_Core_Controller_
         //     array('eq' => '2')
         // );
 
-        // $collection_of_posts->addFieldToFilter(
-        //     'entity_id',
-        //     array('lt' => '3')
-        // );
+        $collection_of_posts->addFieldToFilter(
+            'entity_id',
+            array('lt' => '3')
+        );
 
         // $collection_of_posts->addFieldToFilter(
         //     'title',
         //     array('like' => 'Test%')
         // );
 
-        $collection_of_posts->addFieldToFilter(
-            'entity_id',
-            array('in' => array('3', '6'))
-        );
+        // $collection_of_posts->addFieldToFilter(
+        //     'entity_id',
+        //     array('in' => array('3', '6'))
+        // );
 
         $filtered_posts = $collection_of_posts->getItems();
 
