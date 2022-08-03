@@ -6,6 +6,8 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Grid extends Mage_Admin
     {
         parent::__construct();
         $this->setId('complexworld_grid');
+        $this->setDefaultLimit(40);
+        $this->setDefaultPage(1);
         $this->_filterVisibility = false;
         $this->_pagerVisibility = false;
     }
@@ -58,6 +60,13 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Grid extends Mage_Admin
         $this->setMassactionIdField('id');
         $this->getMassactionBlock()->setFormFieldName('codes');
         $this->getMassactionBlock()->addItem(
+            'disable',
+            array(
+                'label' => $this->__('Disable'),
+                'url'   => $this->getUrl('*/*/disable'),
+            )
+        );
+        $this->getMassactionBlock()->addItem(
             'enable',
             array(
                 'label' => $this->__('Enable'),
@@ -67,4 +76,9 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Grid extends Mage_Admin
         return $this;
     }
 
+    public function getRowUrl($row)
+    {
+
+        return $this->getUrl('*/*/edit', array('post_code' => $row->getId()));
+    }
 }

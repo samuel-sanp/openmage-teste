@@ -6,4 +6,10 @@
             <block type="magentotutorial_complexworld/adminhtml_complexworld" name="magentotutorial_complexworld.complexworld" />
         </reference>
     </adminhtml_index_index>
+
+    <adminhtml_index_edit>
+        <reference name="content">
+            <block type="magentotutorial_complexworld/adminhtml_index_edit" name="magentotutorial_complexworld_edit_information" />
+        </reference>
+    </adminhtml_index_edit>
 </layout>
