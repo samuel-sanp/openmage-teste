@@ -1,14 +1,15 @@
 <?php
 
-class Magentotutorial_Complexworld_Block_Adminhtml_Complexworld extends Mage_Adminhtml_Block_Widget_Container
+// class Magentotutorial_Complexworld_Block_Adminhtml_Complexworld extends Mage_Adminhtml_Block_Widget_Container
+class Magentotutorial_Complexworld_Block_Adminhtml_Complexworld extends Mage_Adminhtml_Block_Widget_Grid_Container
 {
-    // public function __construct()
-    // {
-    //     $this->_blockGroup = 'magentotutorial_complexworld';
-    //     $this->_controller = 'adminhtml_index';
-    //     $this->_headerText = $this->__('Posts');
-    //     parent::__construct();
-    // }
+    public function __construct()
+    {
+        $this->_blockGroup = 'magentotutorial_complexworld';
+        $this->_controller = 'adminhtml_index';
+        $this->_headerText = $this->__('Posts');
+        parent::__construct();
+    }
 
     public function getPosts()
     {
@@ -17,14 +18,15 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Complexworld extends Mage_Adm
             ->addAttributeToSelect('title')
             ->addAttributeToSelect('content')
             ->addAttributeToSelect('date');
-        // $entries->load();
+        $entries->load();
 
         return $entries;
     }
 
     protected function _prepareLayout()
     {
-        // $this->removeButton('add');
+        $this->removeButton('add');
+
         $this->_addButton('add_new', array(
             'label' => $this->__('Add'),
             'onclick' => "setLocation('{$this->getUrl('*/*/new')}')",

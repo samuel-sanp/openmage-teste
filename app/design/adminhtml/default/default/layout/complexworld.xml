@@ -2,8 +2,8 @@
 <layout version="1.0">
     <adminhtml_index_index>
         <reference name="content">
-            <block type="magentotutorial_complexworld/adminhtml_complexworld" name="magentotutorial_complexworld.complexworld" template="magentotutorial_complexworld/complexworld.phtml"/>
-            <!-- <block type="magentotutorial_complexworld/adminhtml_complexworld" name="magentotutorial_complexworld.complexworld" /> -->
+            <!-- <block type="magentotutorial_complexworld/adminhtml_complexworld" name="magentotutorial_complexworld.complexworld" template="magentotutorial_complexworld/complexworld.phtml"/> -->
+            <block type="magentotutorial_complexworld/adminhtml_complexworld" name="magentotutorial_complexworld.complexworld" />
         </reference>
     </adminhtml_index_index>
 </layout>
