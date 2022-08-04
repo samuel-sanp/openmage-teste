@@ -29,6 +29,19 @@ class Magentotutorial_Complexworld_Adminhtml_IndexController extends Mage_Adminh
         return $this->renderLayout();
     }
 
+    public function deleteAction()
+    {
+        $post = $this->_initPost();
+        try {
+            $post->delete();
+            $this->_getSession()->addSuccess($this->__('The post has been deleted.'));
+        } catch (Exception $e) {
+            $this->_getSession()->addError($e->getMessage());
+        }
+        $this->_redirect('*/*/');
+        return;
+    }
+
 
     protected function _isAllowed() {
         return true;
