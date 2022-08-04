@@ -14,6 +14,11 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Edit_Form extends Mage_
      */
     protected function _prepareForm()
     {
+        echo
+        '<pre>',
+        var_dump($this),
+        '<pre>';
+
         $form = new Varien_Data_Form(array(
             'id' => 'edit_form',
             'action' => $this->getData('action'),

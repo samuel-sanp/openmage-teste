@@ -5,6 +5,9 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Edit extends Mage_Admin
     public function __construct()
     {
         parent::__construct();
+        if (!$this->getPost()->isOverlay()) { // save mode
+            $this->removeButton('reset');
+        }
 
     }
 
@@ -17,9 +20,9 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Edit extends Mage_Admin
     }
 
     /**
-     * Get job
+     * Get Post
      *
-     * @return Aoe_Scheduler_Model_Job
+     * @return Magentotutorial_Complexworld_Model_Eavblogpost
      */
     public function getPost()
     {
@@ -28,14 +31,14 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Edit extends Mage_Admin
 
 
     /**
-     * Return translated header text depending on creating/editing action
+     * Return header text depending on creating/editing action
      *
      * @return string
      */
     public function getHeaderText()
     {
         if ($this->getPost()->getId()) {
-            return $this->__('Post "%s"', $this->escapeHtml($this->getPost()->getTitle()));
+            return $this->__('%s', $this->escapeHtml($this->getPost()->getTitle()));
         } else {
             return $this->__('New Post');
         }

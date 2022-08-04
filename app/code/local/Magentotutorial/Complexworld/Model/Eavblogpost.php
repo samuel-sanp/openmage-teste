@@ -6,4 +6,12 @@ class Magentotutorial_Complexworld_Model_Eavblogpost extends Mage_Core_Model_Abs
     {
         $this->_init('complexworld/eavblogpost');
     }
+
+    public function isOverlay()
+    {
+        $data =$this->getData('entity_id');
+        if (empty($data)) return false;
+
+        return true;
+    }
 }
