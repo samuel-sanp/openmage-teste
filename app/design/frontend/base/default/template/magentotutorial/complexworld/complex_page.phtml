@@ -1,9 +1,4 @@
 <?php
-// echo
-// '<pre>',
-// var_dump($this),
-// '</pre>';
-
 $weblog2 = Mage::getModel('complexworld/eavblogpost');
 $entries = $weblog2->getCollection()
     ->addAttributeToSelect('title')
