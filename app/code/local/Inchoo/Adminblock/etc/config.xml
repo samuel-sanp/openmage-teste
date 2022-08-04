@@ -31,9 +31,9 @@
     <adminhtml>
         <layout>
             <updates>
-                <adminblock>
+                <inchoo_adminblock>
                     <file>adminblock.xml</file>
-                </adminblock>
+                </inchoo_adminblock>
             </updates>
         </layout>
     </adminhtml>

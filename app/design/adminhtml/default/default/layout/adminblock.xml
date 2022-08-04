@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<layout version="1.0">
-    <adminhtml_adminblock_index>
-        <block type="adminhtml/adminblock" name="adminblock" template="inchoo/adminblock.phtml"></block>
-    </adminhtml_adminblock_index>
-</layout>

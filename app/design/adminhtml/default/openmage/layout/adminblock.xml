@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<layout version="1.0">
+    <adminhtml_create_index>
+        <reference name="content">
+            <block type="inchoo_adminblock/adminhtml_adminblock" name="adminblock" template="inchoo/adminblock.phtml"/>
+        </reference>
+    </adminhtml_create_index>
+</layout>
