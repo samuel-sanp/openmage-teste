@@ -35,6 +35,11 @@
                 </setup>
             </complexworld_setup>
         </resources>
+        <helpers>
+            <magentotutorial_complexworld>
+                <class>Magentotutorial_Complexworld_Helper</class>
+            </magentotutorial_complexworld>
+        </helpers>
     </global>
 
     <frontend>

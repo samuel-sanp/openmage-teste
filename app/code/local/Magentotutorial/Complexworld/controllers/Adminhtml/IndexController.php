@@ -10,10 +10,16 @@ class Magentotutorial_Complexworld_Adminhtml_IndexController extends Mage_Adminh
 
     protected function _initPost()
     {
+        /**
+         * @var Magentotutorial_Complexworld_Helper_Data $helper
+         */
+        $helper = Mage::helper('magentotutorial_complexworld');
         $postCode = $this->getRequest()->getParam('post_code', null);
-        $post = Mage::getModel('complexworld/eavblogpost')->load($postCode);
+
+        $post = $helper->_initPost($postCode);
 
         Mage::register('current_post_instance', $post);
+
         return $post;
     }
 

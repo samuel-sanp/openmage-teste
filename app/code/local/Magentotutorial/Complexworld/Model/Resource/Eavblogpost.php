@@ -12,4 +12,11 @@ class Magentotutorial_Complexworld_Model_Resource_Eavblogpost extends Mage_Eav_M
             $resource->getConnection('complexworld_write')
         );
     }
+
+    // public function getCollectionPersonal()
+    // {
+    //     $test = Mage::getModel('complexworld/eavblogpost');
+
+    //     return ['a' => 1, 'b' => 2];
+    // }
 }

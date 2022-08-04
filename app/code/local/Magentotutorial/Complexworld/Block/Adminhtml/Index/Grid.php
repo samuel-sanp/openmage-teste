@@ -20,6 +20,8 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Grid extends Mage_Admin
             ->addAttributeToSelect('content')
             ->addAttributeToSelect('date');
 
+        // $collection->getSelect()->where();
+
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
@@ -35,13 +37,14 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Grid extends Mage_Admin
                 'sortable' => false,
             )
         );
-        $this->addColumn(
+        $this->addColumnAfter(
             'content',
             array(
                 'header'   => $this->__('Content'),
                 'index'    => 'content',
                 'sortable' => false,
-            )
+            ),
+            'date'
         );
         $this->addColumn(
             'date',
@@ -78,7 +81,6 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Grid extends Mage_Admin
 
     public function getRowUrl($row)
     {
-
         return $this->getUrl('*/*/edit', array('post_code' => $row->getId()));
     }
 }
