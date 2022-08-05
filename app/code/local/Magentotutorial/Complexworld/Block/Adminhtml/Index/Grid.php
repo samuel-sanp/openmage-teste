@@ -63,17 +63,10 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Grid extends Mage_Admin
         $this->setMassactionIdField('id');
         $this->getMassactionBlock()->setFormFieldName('codes');
         $this->getMassactionBlock()->addItem(
-            'disable',
+            'remove',
             array(
-                'label' => $this->__('Disable'),
-                'url'   => $this->getUrl('*/*/disable'),
-            )
-        );
-        $this->getMassactionBlock()->addItem(
-            'enable',
-            array(
-                'label' => $this->__('Enable'),
-                'url'   => $this->getUrl('*/*/enable'),
+                'label' => $this->__('Remove'),
+                'url'   => $this->getUrl('*/*/deleteMany'),
             )
         );
         return $this;

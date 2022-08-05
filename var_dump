@@ -1,5 +1,5 @@
 
-echo
-'<pre>',
-var_dump($this->getData('action')),
-'<pre>';
+        echo
+        '<pre>',
+        var_dump(),
+        '<pre>';

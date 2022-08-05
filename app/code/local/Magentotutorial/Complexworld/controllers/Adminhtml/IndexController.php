@@ -3,7 +3,7 @@
 class Magentotutorial_Complexworld_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
 {
     public function indexAction()
-    {  
+    {
         $this->loadLayout();
         return $this->renderLayout();
     }
@@ -48,6 +48,27 @@ class Magentotutorial_Complexworld_Adminhtml_IndexController extends Mage_Adminh
         return;
     }
 
+    public function deleteManyAction()
+    {
+
+        try {
+            $codes = $this->getRequest()->getPost('codes');
+
+            foreach ($codes as $code) {
+                $post = Mage::getModel('complexworld/eavblogpost')->load($code);
+                $post->delete();
+            }
+
+            $this->_getSession()->addSuccess($this->__('The posts has been deleted.'));
+        } catch (Exception $e) {
+            $this->_getSession()->addError($e->getMessage());
+        }
+        
+        $this->_redirect('*/*/');
+        return;
+
+    }
+
     public function saveAction()
     {
         $data = $this->getRequest()->getPost();
@@ -57,7 +78,7 @@ class Magentotutorial_Complexworld_Adminhtml_IndexController extends Mage_Adminh
                 $post = $this->_initPost();
                 $post->addData($data);
         
-                // adicionar validacao
+                // TODO: implement validation
         
                 $post->save();
         
