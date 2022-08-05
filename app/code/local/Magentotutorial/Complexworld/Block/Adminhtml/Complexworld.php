@@ -24,10 +24,6 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Complexworld extends Mage_Adm
 
     protected function _prepareLayout()
     {
-        $this->_addButton('remove', array(
-            'label' => $this->__('Remove'),
-            'onclick' => "setLocation('{$this->getUrl('*/*/testAction')}')",
-        ));
         return parent::_prepareLayout();
     }
 }

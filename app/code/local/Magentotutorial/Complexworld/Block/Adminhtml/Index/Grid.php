@@ -6,10 +6,6 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Grid extends Mage_Admin
     {
         parent::__construct();
         $this->setId('complexworld_grid');
-        $this->setDefaultLimit(40);
-        $this->setDefaultPage(1);
-        $this->_filterVisibility = false;
-        $this->_pagerVisibility = false;
     }
 
     public function _prepareCollection()
@@ -69,6 +65,8 @@ class Magentotutorial_Complexworld_Block_Adminhtml_Index_Grid extends Mage_Admin
                 'url'   => $this->getUrl('*/*/deleteMany'),
             )
         );
+
+
         return $this;
     }
 
