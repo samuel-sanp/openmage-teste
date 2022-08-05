@@ -77,6 +77,7 @@ class Magentotutorial_Complexworld_Adminhtml_IndexController extends Mage_Adminh
             try {
                 $post = $this->_initPost();
                 $post->addData($data);
+                $post->setDate(now());
         
                 // TODO: implement validation
         
@@ -104,6 +105,55 @@ class Magentotutorial_Complexworld_Adminhtml_IndexController extends Mage_Adminh
             $this->_redirect('*/*/edit', array('post_code' => $this->getRequest()->getParam('post_code')));
             return;
         }
+    }
+
+    public function enableAction()
+    {
+        $codes = $this->getRequest()->getPost('codes');
+
+        $resource = Mage::getSingleton('core/resource');
+        $writeConnection = $resource->getConnection('core_write');
+        $table = $resource->getTableName('complexworld/eavblogpost');
+
+        foreach ($codes as $code) {
+            /** @var Magentotutorial_Complexworld_Model_Eavblogpost */
+            $post = Mage::getModel('complexworld/eavblogpost')->load($code);
+            
+            if (!$post->getIsActive()) {
+                // $post->setIsActive(true)->save();
+
+                $query = "UPDATE {$table} SET is_active = '1' WHERE entity_id = ".(int)$code;
+                $writeConnection->query($query);
+
+                $this->_getSession()->addSuccess($this->__('Enable "%s" - ID "%s"', $post->getTitle(), $post->getId()));
+            }
+        }
+
+        $this->_redirect('*/*/index');
+    }
+
+    public function disableAction()
+    {
+        $codes = $this->getRequest()->getPost('codes');
+
+        $resource = Mage::getSingleton('core/resource');
+        $writeConnection = $resource->getConnection('core_write');
+        $table = $resource->getTableName('complexworld/eavblogpost');
+        
+        foreach ($codes as $code) {
+            /** @var Magentotutorial_Complexworld_Model_Eavblogpost $post */
+            $post = Mage::getModel('complexworld/eavblogpost')->load($code);
+            
+            if ($post->getIsActive()) {
+                // $post->setIsActive(false)->save();
+                $query = "UPDATE {$table} SET is_active = '0' WHERE entity_id = ".(int)$code;
+                $writeConnection->query($query);
+
+                $this->_getSession()->addSuccess($this->__('Disabled "%s" - ID "%s"', $post->getTitle(), $post->getId()));
+            }
+        }
+
+        $this->_redirect('*/*/index');
     }
 
 
