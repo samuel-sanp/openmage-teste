@@ -48,6 +48,43 @@ class Magentotutorial_Complexworld_Adminhtml_IndexController extends Mage_Adminh
         return;
     }
 
+    public function saveAction()
+    {
+        $data = $this->getRequest()->getPost();
+
+        if ($data) {
+            try {
+                $post = $this->_initPost();
+                $post->addData($data);
+        
+                // adicionar validacao
+        
+                $post->save();
+        
+                // display success message
+                $this->_getSession()->addSuccess(
+                    Mage::helper('magentotutorial_complexworld')->__('The post has been saved.')
+                );
+        
+                // clear previously saved data from session
+                $this->_getSession()->setFormData(false);
+        
+                $this->_redirect('*/*');
+                return;
+            } catch (Mage_Core_Exception $e) {
+                Mage::logException($e);
+                $this->_getSession()->addError($e->getMessage());
+            } catch (Exception $e) {
+                Mage::logException($e);
+                $this->_getSession()->addError($this->__('An error occurred during saving a post %s', $e->getMessage()));
+            }
+    
+            $this->_getSession()->setFormData($data);
+            $this->_redirect('*/*/edit', array('post_code' => $this->getRequest()->getParam('post_code')));
+            return;
+        }
+    }
+
 
     protected function _isAllowed() {
         return true;
